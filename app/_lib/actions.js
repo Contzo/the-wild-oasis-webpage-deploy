@@ -11,9 +11,12 @@ export async function signInAction() {
   let googleProvider = null;
   try {
     // Fetch the list of available providers
-    const response = await fetch("http://localhost:3000/api/auth/providers", {
-      cache: "no-store", // Ensure you get the latest providers list
-    });
+    const response = await fetch(
+      "https://the-wild-oasis-webpage-deploy-1fkb.vercel.app/api/auth/providers",
+      {
+        cache: "no-store", // Ensure you get the latest providers list
+      }
+    );
 
     if (!response.ok) {
       throw new Error(`Failed to fetch providers: ${response.status}`);
